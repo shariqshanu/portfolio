@@ -1,6 +1,4 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {
-    output: 'export', // Ensure this line is present
-};
+const nextConfig = {};
 
 export default nextConfig;
