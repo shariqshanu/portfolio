@@ -29,7 +29,7 @@ const DataCard = [
         heading: "Landing Page",
         detail:
             "This landing page is created using Tailwind CSS as a practice project. It showcases responsive design and modern UI components, demonstrating the power and flexibility of Tailwind for building beautiful web interfaces.",
-        demo: "https://shariqshanu.github.io/tailwind-landing-page.github.io/",
+        demo: "https://tailwind-landing-page.github.io/",
         // github: "",
         techused: ['Tailwind CSS']
     }
