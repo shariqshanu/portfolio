@@ -30,6 +30,7 @@ const DataCard = [
         detail:
             "This landing page is created using Tailwind CSS as a practice project. It showcases responsive design and modern UI components, demonstrating the power and flexibility of Tailwind for building beautiful web interfaces.",
         demo: "https://tailwind-landing-page-github-io.vercel.app/",
+
         // github: "",
         techused: ['Tailwind CSS']
     }
