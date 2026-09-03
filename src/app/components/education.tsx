@@ -1,12 +1,9 @@
-'use client'
-import {
-  VerticalTimeline,
-  VerticalTimelineElement,
-} from "react-vertical-timeline-component";
-import "react-vertical-timeline-component/style.min.css";
-import { FaUniversity, FaGraduationCap, FaSchool } from "react-icons/fa";
+import { getPortfolioData } from "@/app/lib/api";
+import EducationTimelineWrapper from "@/app/components/education-timeline-wrapper";
 
-function Eduction() {
+async function Eduction() {
+  const data = await getPortfolioData();
+
   return (
     <div
       id="education"
@@ -29,60 +26,8 @@ function Eduction() {
           <span className="w-24 h-[2px] bg-[#1a1443]"></span>
         </div>
       </div>
-      <VerticalTimeline>
-        <VerticalTimelineElement
-          className="vertical-timeline-element--work  "
-          contentStyle={{ background: "#161a2f", boxShadow: "none" }}
-          contentArrowStyle={{ borderRight: "7px solid  #161a2f" }}
-          date="2022 - 2023"
-          visible={true}
-          iconStyle={{ background: "#1a1443", color: "#fff" }}
-          icon={<FaUniversity />}
-        >
-          <h3 className="vertical-timeline-element-title text-2xl text-[#16f2b3]">
-            Web Development
-          </h3>
-          <h4 className="vertical-timeline-element-subtitle text-md pt-2">
-            Al Fateem Academy - Specializing in Full Stack Development
-          </h4>
-          {/*<p className="text-lg">Grade: A</p>*/}
-        </VerticalTimelineElement>
-        {/*<VerticalTimelineElement*/}
-        {/*  contentStyle={{ background: "#161a2f", boxShadow: "none" }}*/}
-        {/*  contentArrowStyle={{ borderRight: "7px solid  #161a2f" }}*/}
-        {/*  className="vertical-timeline-element--work"*/}
-        {/*  visible={true}*/}
-        {/*  date="2018 - 2022"*/}
-        {/*  iconStyle={{ background: "#1a1443", color: "#fff" }}*/}
-        {/*  icon={<FaGraduationCap />}*/}
-        {/*>*/}
-        {/*  <h3 className="vertical-timeline-element-title text-2xl text-[#16f2b3]">*/}
-        {/*    BS Mathematics*/}
-        {/*  </h3>*/}
-        {/*  <h4 className="vertical-timeline-element-subtitle text-md pt-2">*/}
-        {/*    {" "}*/}
-        {/*    Govt Murray College,Sialkot*/}
-        {/*  </h4>*/}
-        {/*  <p className="text-lg">Grade: A</p>*/}
-        {/*</VerticalTimelineElement>*/}
-        <VerticalTimelineElement
-          className="vertical-timeline-element--work"
-          contentStyle={{ background: "#161a2f", boxShadow: "none" }}
-          contentArrowStyle={{ borderRight: "7px solid  #161a2f" }}
-          date="2020 - 2021"
-          visible={true}
-          iconStyle={{ background: "#1a1443", color: "#fff" }}
-          icon={<FaSchool />}
-        >
-          <h3 className="vertical-timeline-element-title text-2xl text-[#16f2b3]">
-            Commerce
-          </h3>
-          <h4 className="vertical-timeline-element-subtitle text-md pt-2">
-            Govt. Degree Science & Commerce Collage Lyari
-          </h4>
-          {/*<p className="text-lg">Grade:B</p>*/}
-        </VerticalTimelineElement>
-      </VerticalTimeline>
+
+      <EducationTimelineWrapper educations={data.educations} />
     </div>
   );
 }
